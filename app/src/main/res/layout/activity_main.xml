@@ -5,45 +5,7 @@
     android:paddingTop="0dp"
     android:paddingBottom="0dp" tools:context=".MainActivity"
     android:padding="0dp"
-    android:background="#d9f0b8">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/buttonLayout"
-        android:padding="16dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create Event"
-            android:id="@+id/createEventButton"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="createEvent" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <AnalogClock
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/analogClock"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Date"
-                android:id="@+id/textView" />
-        </LinearLayout>
-    </RelativeLayout>
+    android:background="#CFD8DC">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -57,9 +19,9 @@
             android:src="@drawable/circle"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-340dp"
-            android:layout_marginLeft="-150dp"
-            android:layout_marginRight="-150dp" />
+            android:layout_marginBottom="-350dp"
+            android:layout_marginLeft="-160dp"
+            android:layout_marginRight="-160dp" />
 
         <me.pescadl.sohacks.SliceView
             android:layout_width="wrap_content"
@@ -71,6 +33,39 @@
             android:layout_marginRight="0dp"
             android:id="@+id/sliceView" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:id="@+id/createEventButton"
+            android:onClick="createEvent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#00010101" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/startDateText"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonLayout"
+        android:padding="16dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/dateView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#00ffffff" />
     </RelativeLayout>
 
 </RelativeLayout>
