@@ -1,34 +1,17 @@
 package me.pescadl.sohacks;
 
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
-import android.app.ActionBar;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.RectF;
+import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -85,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     }
 
     public void createEvent(View v) {
-        Intent intent = new Intent(this, CreateEventActivity.class);
+        Intent intent = new Intent(this, CreateClassActivity.class);
         startActivity(intent);
     }
 

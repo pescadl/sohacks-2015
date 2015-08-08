@@ -20,6 +20,10 @@
             android:name=".CreateEventActivity"
             android:label="@string/title_activity_create_event" >
         </activity>
+        <activity
+            android:name=".CreateClassActivity"
+            android:label="@string/title_activity_create_class" >
+        </activity>
     </application>
 
 </manifest>

@@ -35,18 +35,9 @@
                 android:ems="10"
                 android:id="@+id/startDateText"
                 android:layout_weight="1"
-                android:hint="Start Date"
+                android:hint="Date"
                 android:focusable="false" />
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="time"
-                android:ems="10"
-                android:id="@+id/startTimeText"
-                android:layout_weight="1"
-                android:hint="Start Time"
-                android:focusable="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -58,11 +49,11 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="date"
+                android:inputType="time"
                 android:ems="10"
-                android:id="@+id/endDateText"
+                android:id="@+id/startTimeText"
                 android:layout_weight="1"
-                android:hint="End Date"
+                android:hint="Start Time"
                 android:focusable="false" />
 
             <EditText
