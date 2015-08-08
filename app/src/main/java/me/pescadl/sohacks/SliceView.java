@@ -1,6 +1,7 @@
 package me.pescadl.sohacks;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
@@ -48,7 +49,7 @@ public class SliceView extends View {
         m = mo;
         d = da;
     }
-
+    int theme = 0;
     public void init() {
         eventColor.setColor(Color.rgb(238,238,238));
         eventColor.setStyle(Paint.Style.FILL);
@@ -199,7 +200,9 @@ public class SliceView extends View {
             }
             c.moveToNext();
         }
-//        canvas.drawCircle(canvas.getWidth() / 2,canvas.getHeight(),530,centerColor);
+        if(theme == 0) {
+            canvas.drawCircle(canvas.getWidth() / 2, canvas.getHeight(), 530, centerColor);
+        }
         c.close();
         cdb.close();
         canvas.drawRect(outerBounds.centerX() - 5f, outerBounds.bottom - 1370, outerBounds.centerX() + 5f, outerBounds.bottom - 1250, indicator);

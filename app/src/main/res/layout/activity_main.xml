@@ -41,7 +41,7 @@
             android:onClick="createEvent"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="#00010101" />
+            android:background="#1e000000" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="62dp"
             android:onClick="viewTodo"
-            android:background="#00ffffff" />
+            android:background="#1e000000" />
 
     </RelativeLayout>
 

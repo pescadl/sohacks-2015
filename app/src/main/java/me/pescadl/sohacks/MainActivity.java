@@ -16,6 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                 String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
                 dateView.setText(months[currMonth] + " " + currDay + ", " + currYear);
                 SliceView slices = (SliceView) findViewById(R.id.sliceView);
+                slices.theme = th;
                 slices.setDate(currYear,currMonth,currDay);
                 slices.setRot(currdegree);
                 slices.invalidate();
@@ -76,13 +80,14 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         });
         mDetector = new GestureDetectorCompat(this,this);
     }
-
+    int th;
     @Override
     public void onResume() {
         super.onResume();
 
         SharedPreferences settings = getSharedPreferences("CentricPrefs", 0);
         int theme = settings.getInt("theme", 0);
+        th = theme;
 
         ImageView wheelView = (ImageView) findViewById(R.id.wheelImageView);
         switch(theme){
@@ -116,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         wheelView.setRotation(-currdegree);
 
         SliceView slices = (SliceView) findViewById(R.id.sliceView);
+        slices.theme = theme;
         slices.setDate(currYear,currMonth,currDay);
         slices.setRot(currdegree);
         slices.invalidate();
@@ -137,6 +143,26 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     public void viewTodo(View v) {
         Intent intent = new Intent(this, ViewTodo.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mainmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.themes:
+                Intent intent = new Intent(this, ThemePicker.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -262,6 +288,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         currdegree += (distanceX)/9;
         wheelView.setRotation(-currdegree);
         SliceView slices = (SliceView) findViewById(R.id.sliceView);
+        slices.theme =th;
         slices.setDate(currYear,currMonth,currDay);
         slices.setRot(currdegree);
         slices.invalidate();
@@ -287,6 +314,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                 currdegree = (float)animation.getAnimatedValue();
                 wheelView.setRotation(-currdegree);
                 SliceView slices = (SliceView) findViewById(R.id.sliceView);
+                slices.theme = th;
                 slices.setDate(currYear,currMonth,currDay);
                 slices.setRot(currdegree);
                 slices.invalidate();

@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -59,6 +59,10 @@
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_view_todo" >
             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ThemePicker"
+            android:label="@string/title_activity_theme_picker" >
         </activity>
     </application>
 

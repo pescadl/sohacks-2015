@@ -25,12 +25,18 @@
         <item>Buttery White</item>
     </string-array>
     <string-array name="create_array">
-    <item>Create Event</item>
-    <item>Create Class</item>
-    <item>Create Todo</item>
-</string-array>
+        <item>Create Event</item>
+        <item>Create Class</item>
+        <item>Create Todo</item>
+    </string-array>
+    <string-array name="theme_array">
+        <item>Default</item>
+        <item>Space</item>
+        <item>Pizza</item>
+    </string-array>
     <string name="title_activity_create">Create</string>
     <string name="title_activity_view_event">View Event</string>
     <string name="title_activity_view_class">View Class</string>
     <string name="title_activity_view_todo">View Todo</string>
+    <string name="title_activity_theme_picker">Themes</string>
 </resources>
