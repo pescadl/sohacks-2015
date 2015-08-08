@@ -1,6 +1,42 @@
 <resources>
-    <string name="app_name">Sohacks</string>
+    <string name="app_name">Centric</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_create_event">Create Event</string>
+    <string name="title_activity_create_class">Create Class</string>
+    <string name="title_activity_create_todo">Create Todo</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_spinning_thing">SpinningThing</string>
+    <string name="title_activity_test_slice">TestSlice</string>
+    <string-array name="colors_array">
+        <item>Dark Salmon</item>
+        <item>Chardonnay</item>
+        <item>Deco</item>
+        <item>Baby Blue</item>
+        <item>Cold Purple</item>
+        <item>Sea Pink</item>
+        <item>Tacao</item>
+        <item>Picasso</item>
+        <item>Eton Blue</item>
+        <item>Pastel Violet</item>
+        <item>Buttery White</item>
+    </string-array>
+    <string-array name="create_array">
+        <item>Create Event</item>
+        <item>Create Class</item>
+        <item>Create Todo</item>
+    </string-array>
+    <string-array name="theme_array">
+        <item>Default</item>
+        <item>Space</item>
+        <item>Pizza</item>
+    </string-array>
+    <string name="title_activity_create">Create</string>
+    <string name="title_activity_view_event">View Event</string>
+    <string name="title_activity_view_class">View Class</string>
+    <string name="title_activity_view_todo">View Todo</string>
+    <string name="title_activity_theme_picker">Themes</string>
 </resources>
