@@ -20,10 +20,6 @@
             android:name=".CreateEventActivity"
             android:label="@string/title_activity_create_event" >
         </activity>
-        <activity
-            android:name=".SpinningThing"
-            android:label="@string/title_activity_spinning_thing" >
-        </activity>
     </application>
 
 </manifest>
