@@ -1,11 +1,16 @@
 package me.pescadl.sohacks;
 
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         findViewById(R.id.dateView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +81,26 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     public void onResume() {
         super.onResume();
 
+        SharedPreferences settings = getSharedPreferences("CentricPrefs", 0);
+        int theme = settings.getInt("theme", 0);
+
+        ImageView wheelView = (ImageView) findViewById(R.id.wheelImageView);
+        switch(theme){
+            case 0://default
+                wheelView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.circle, null));
+                break;
+            case 1://space
+                wheelView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.space, null));
+                break;
+            case 2://pizza
+                wheelView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.pizza, null));
+                break;
+            default:
+                wheelView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.circle, null));
+                break;
+
+        }
+
         Calendar c = Calendar.getInstance();
         currYear = c.get(Calendar.YEAR);
         currMonth = c.get(Calendar.MONTH);
@@ -86,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
         double decimalHours = c.get(Calendar.HOUR_OF_DAY) + c.get(Calendar.MINUTE) / 60.0;
         float degrees = (int) ((decimalHours + 18) % 24 / 24.0 * 360.0);
-        ImageView wheelView = (ImageView) findViewById(R.id.wheelImageView);
         currdegree = degrees;
         wheelView.setRotation(-currdegree);
 
