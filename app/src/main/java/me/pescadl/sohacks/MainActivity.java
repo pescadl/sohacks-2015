@@ -10,6 +10,10 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +30,7 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -50,10 +55,14 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
         Calendar c = Calendar.getInstance();
         double decimalHours = c.get(Calendar.HOUR_OF_DAY) + c.get(Calendar.MINUTE) / 60.0;
-        float degrees = (int) ((decimalHours + 17) % 24 / 24.0 * 360.0);
+        float degrees = (int) ((decimalHours + 18) % 24 / 24.0 * 360.0);
         ImageView wheelView = (ImageView) findViewById(R.id.wheelImageView);
         currdegree = degrees;
         wheelView.setRotation(-currdegree);
+
+        SliceView slices = (SliceView) findViewById(R.id.sliceView);
+        slices.setRot(currdegree);
+        slices.invalidate();
     }
 
     @Override
@@ -112,6 +121,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         ImageView wheelView = (ImageView) findViewById(R.id.wheelImageView);
         currdegree += (distanceX)/9;
         wheelView.setRotation(-currdegree);
+        SliceView slices = (SliceView) findViewById(R.id.sliceView);
+        slices.setRot(currdegree);
+        slices.invalidate();
         return true;
     }
 
@@ -131,6 +143,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                 ImageView wheelView = (ImageView) findViewById(R.id.wheelImageView);
                 currdegree = (float)animation.getAnimatedValue();
                 wheelView.setRotation(-currdegree);
+                SliceView slices = (SliceView) findViewById(R.id.sliceView);
+                slices.setRot(currdegree);
+                slices.invalidate();
             }
         });
         flingAnimator.setDuration(500);

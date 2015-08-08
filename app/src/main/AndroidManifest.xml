@@ -20,6 +20,10 @@
             android:name=".CreateEventActivity"
             android:label="@string/title_activity_create_event" >
         </activity>
+        <activity
+            android:name=".TestSlice"
+            android:label="@string/title_activity_test_slice" >
+        </activity>
     </application>
 
 </manifest>

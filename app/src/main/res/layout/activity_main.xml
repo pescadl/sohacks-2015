@@ -4,7 +4,8 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp" tools:context=".MainActivity"
-    android:padding="0dp">
+    android:padding="0dp"
+    android:background="#d9f0b8">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,6 +22,27 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:onClick="createEvent" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <AnalogClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/analogClock"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Date"
+                android:id="@+id/textView" />
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -35,9 +57,19 @@
             android:src="@drawable/circle"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-350dp"
-            android:layout_marginLeft="-160dp"
-            android:layout_marginRight="-160dp" />
+            android:layout_marginBottom="-340dp"
+            android:layout_marginLeft="-150dp"
+            android:layout_marginRight="-150dp" />
+
+        <me.pescadl.sohacks.SliceView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:id="@+id/sliceView" />
 
     </RelativeLayout>
 
