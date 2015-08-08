@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
@@ -56,7 +55,7 @@ public class SliceView extends View {
         centerColor.setColor(Color.rgb(212,212,212));
         centerColor.setStyle(Paint.Style.FILL);
         indicator.setColor(android.graphics.Color.RED);
-        indicator.setStyle(Paint.Style.STROKE);
+        indicator.setStyle(Paint.Style.FILL_AND_STROKE);
         Paint darkSalmon = new Paint();
         darkSalmon.setColor(Color.rgb(241, 156, 125));
         palette.put("Dark Salmon", darkSalmon);
@@ -200,9 +199,10 @@ public class SliceView extends View {
             }
             c.moveToNext();
         }
-        canvas.drawCircle(canvas.getWidth() / 2,canvas.getHeight(),530,centerColor);
+//        canvas.drawCircle(canvas.getWidth() / 2,canvas.getHeight(),530,centerColor);
         c.close();
         cdb.close();
-        canvas.drawLine(outerBounds.centerX(), outerBounds.bottom - 1500, outerBounds.centerX(), outerBounds.bottom, indicator);
+        canvas.drawRect(outerBounds.centerX() - 5f, outerBounds.bottom - 1370, outerBounds.centerX() + 5f, outerBounds.bottom - 1250, indicator);
+//        canvas.drawLine(outerBounds.centerX(), outerBounds.bottom - 1500, outerBounds.centerX(), outerBounds.bottom, indicator);
     }
 }

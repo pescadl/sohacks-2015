@@ -65,7 +65,20 @@
             android:id="@+id/dateView"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:background="#00ffffff"
+            android:textSize="40dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TODO"
+            android:id="@+id/viewTodoButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="62dp"
+            android:onClick="viewTodo"
             android:background="#00ffffff" />
+
     </RelativeLayout>
 
 </RelativeLayout>

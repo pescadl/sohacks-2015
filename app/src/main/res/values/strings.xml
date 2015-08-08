@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_create_event">Create Event</string>
     <string name="title_activity_create_class">Create Class</string>
+    <string name="title_activity_create_todo">Create Todo</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -26,8 +27,10 @@
     <string-array name="create_array">
     <item>Create Event</item>
     <item>Create Class</item>
+    <item>Create Todo</item>
 </string-array>
     <string name="title_activity_create">Create</string>
     <string name="title_activity_view_event">View Event</string>
     <string name="title_activity_view_class">View Class</string>
+    <string name="title_activity_view_todo">View Todo</string>
 </resources>
